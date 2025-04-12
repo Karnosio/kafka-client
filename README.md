@@ -71,7 +71,11 @@ Run your Kafka client using `asyncio`:
 import asyncio
 
 async def main():
-    broker = KafkaBroker(bootstrap_servers="kafka:9092", group_id="my_group", auto_reset_offset="latest")
+    broker = KafkaBroker(
+        bootstrap_servers="kafka:9092",
+        group_id="my_group",
+        auto_reset_offset="latest"
+    )
     
     # Run this at the start of your program, this will ensure that Kafka is ready to accept connections
     await broker.wait_for_start()
