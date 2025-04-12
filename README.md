@@ -82,8 +82,8 @@ async def main():
     
     # Then run your consumers and producers
     await asyncio.gather(
-        await broker.listen_to_consumer(),
-        await broker.send_data_to_producer()
+        broker.listen_to_consumer(),
+        broker.send_data_to_producer()
     )
 
 if __name__ == "__main__":
